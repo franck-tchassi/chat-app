@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ConvexClientProvider from "../providers/convexClientProvider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 
 const geistSans = localFont({
@@ -36,7 +37,10 @@ export default function RootLayout({
         >
           
           <ConvexClientProvider>
-            {children}
+            <TooltipProvider>
+              {children}
+            </TooltipProvider>
+            
           </ConvexClientProvider>
           
 
